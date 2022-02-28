@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --dark-grayish-cyan-two: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --light-grayish-cyan-two: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-grayish-cyan);
+    font-family: 'Space Mono', monospace;
+}
+
+.logo-div {
+    margin: 2rem 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+}
+
+#billAmount {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+    background: url('./images/icon-dollar.svg') no-repeat 1rem;
+    background-color: var(--light-grayish-cyan-two);
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    font-family: 'Space Mono', monospace;
+}
+
+
