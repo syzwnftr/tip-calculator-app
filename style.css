@@ -64,7 +64,7 @@ main {
 .div-tip-button {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    gap: 0.6rem 1rem;
 }
 
 .btn {
@@ -76,6 +76,14 @@ main {
     outline: none;
     color: var(--white);
     background-color: var(--very-dark-cyan);
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--strong-cyan);
 }
 
 .custom-tip {
@@ -86,6 +94,9 @@ main {
     border: none;
     outline: none;
     background-color: var(--light-grayish-cyan-two);
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 
