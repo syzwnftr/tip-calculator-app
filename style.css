@@ -103,6 +103,7 @@ main {
 
 .custom-tip {
     padding: 0.5rem;
+    padding: 0.6rem 1rem;
     text-align: right;
     font-family: 'Space Mono', monospace;
     font-weight: 700;
@@ -110,7 +111,7 @@ main {
     outline: none;
     background-color: var(--light-grayish-cyan-two);
     border-radius: 0.3rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     cursor: pointer;
 }
 
