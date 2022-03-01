@@ -34,7 +34,7 @@ main {
     border-top-left-radius: 2rem;
 }
 
-.sect-bill {
+.sect-bill, .sect-tip {
     margin-bottom: 2rem;
 }
 
@@ -45,20 +45,29 @@ main {
     font-weight: 700;
 }
 
-#billAmount {
+.user-input {
     display: block;
     width: 100%;
     padding: 0.6rem 1rem;
     outline: none;
     border: none;
     border-radius: 0.3rem;
-    background: url('./images/icon-dollar.svg') no-repeat 1rem;
     background-color: var(--light-grayish-cyan-two);
     text-align: right;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--very-dark-cyan);
     font-family: 'Space Mono', monospace;
+}
+
+.user-input:focus {
+    outline: 2px solid var(--strong-cyan);
+}
+
+#billAmount {
+    background-image: url('./images/icon-dollar.svg');
+    background-repeat: no-repeat;
+    background-position: 1rem center; 
 }
 
 .div-tip-button {
@@ -82,8 +91,14 @@ main {
     transition: background-color 0.2s ease-in-out;
 }
 
-.btn:hover {
+.btn:focus {
     background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.btn:hover {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
 }
 
 .custom-tip {
@@ -99,4 +114,13 @@ main {
     cursor: pointer;
 }
 
+.custom-tip:focus {
+    outline: 2px solid var(--strong-cyan);
+}
+
+#numOfPeople {
+    background-image: url('./images/icon-person.svg');
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+}
 
