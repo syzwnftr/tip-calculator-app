@@ -34,6 +34,10 @@ main {
     border-top-left-radius: 2rem;
 }
 
+.sect-bill {
+    margin-bottom: 2rem;
+}
+
 .label {
     display: inline-block;
     margin-bottom: 0.5rem;
@@ -55,6 +59,33 @@ main {
     font-weight: 700;
     color: var(--very-dark-cyan);
     font-family: 'Space Mono', monospace;
+}
+
+.div-tip-button {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.btn {
+    padding: 0.5rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    color: var(--white);
+    background-color: var(--very-dark-cyan);
+}
+
+.custom-tip {
+    padding: 0.5rem;
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    background-color: var(--light-grayish-cyan-two);
 }
 
 
