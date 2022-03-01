@@ -18,9 +18,23 @@
 
     <main>
       <section class="sect-bill">
-        <div class="bill">
+        <div class="div-bill">
           <label for="billAmount" class="label">Bill</label>
-          <input type="text" name="billAmount" id="billAmount">
+          <input type="text" id="billAmount">
+        </div>
+      </section>
+
+      <section class="sect-tip">
+        <div class="div-tip">
+          <p class="label">Select Tip %</p>
+          <div class="div-tip-button">
+            <button class="btn">5%</button>
+            <button class="btn">10%</button>
+            <button class="btn">15%</button>
+            <button class="btn">25%</button>
+            <button class="btn">50%</button>
+            <input type="text" id="customTip" class="custom-tip" placeholder="Custom">
+          </div>
         </div>
       </section>
     </main>
@@ -28,7 +42,7 @@
   </div>
   
 
-  <!-- Bill
+  <!-- 
 
   Select Tip %
   5%
