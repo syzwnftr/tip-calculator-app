@@ -34,7 +34,9 @@ main {
     border-top-left-radius: 2rem;
 }
 
-.sect-bill, .sect-tip {
+.sect-bill, 
+.sect-tip, 
+.sect-people {
     margin-bottom: 2rem;
 }
 
@@ -125,3 +127,26 @@ main {
     background-position: 1rem center;
 }
 
+
+.sect-amount {
+    background-color: var(--very-dark-cyan);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 1.3rem;
+}
+
+.sect-amount .amount {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.sect-amount .person-text {
+    color: var(--dark-grayish-cyan-two);
+    font-weight: 700;
+}
+
+.sect-amount .amount-number {
+    color: var(--strong-cyan);
+    font-weight: 700;
+    font-size: 2rem;
+}
