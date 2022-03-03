@@ -19,4 +19,12 @@ inputNumPeople.addEventListener('input', () => {
     numbersOnly(inputNumPeople);
 });
 
+// reset input when page is refresh
+function resetInput() {
+    inputBill.value = '';
+    inputTip.value = '';
+    inputNumPeople.value = '';
+}
+
+resetInput();
     
