@@ -114,7 +114,8 @@ main {
     background-color: var(--light-grayish-cyan-two);
     border-radius: 0.3rem;
     font-size: 1.3rem;
-    cursor: pointer;
+    cursor: pointer; 
+    color: var(--very-dark-cyan);
 }
 
 .custom-tip:focus {
