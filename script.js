@@ -1,12 +1,22 @@
 const inputBill = document.querySelector('#billAmount');
-
-inputBill.addEventListener('input', () => {
-    numbersOnly(inputBill);
-});
+const inputTip = document.querySelector('#customTip');
+const inputNumPeople = document.querySelector('#numOfPeople');
 
 function numbersOnly(input) {
     var num = /[^0-9]/gi;
     input.value = input.value.replace(num, '');
 }
+
+inputBill.addEventListener('input', () => {
+    numbersOnly(inputBill);
+});
+
+inputTip.addEventListener('input', () => {
+    numbersOnly(inputTip);
+});
+
+inputNumPeople.addEventListener('input', () => {
+    numbersOnly(inputNumPeople);
+});
 
     
