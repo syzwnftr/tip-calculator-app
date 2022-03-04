@@ -8,8 +8,7 @@
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
-  <div class="container">
-    
+  <div class="container">  
     <header>
       <div class="logo-div">
         <img src="./images/logo.svg" alt="SPLITTER Logo">
@@ -17,33 +16,35 @@
     </header>
 
     <main>
-      <section class="sect-bill">
-        <div class="div-bill">
-          <label for="billAmount" class="label">Bill</label>
-          <input type="text" id="billAmount" class="user-input" placeholder="0">
-        </div>
-      </section>
-
-      <section class="sect-tip">
-        <div class="div-tip">
-          <p class="label">Select Tip %</p>
-          <div class="div-tip-button">
-            <button class="btn">5%</button>
-            <button class="btn">10%</button>
-            <button class="btn">15%</button>
-            <button class="btn">25%</button>
-            <button class="btn">50%</button>
-            <input type="text" id="customTip" class="custom-tip" placeholder="Custom">
+      <div class="div-for-desktop">
+        <section class="sect-bill">
+          <div class="div-bill">
+            <label for="billAmount" class="label">Bill</label>
+            <input type="text" id="billAmount" class="user-input" placeholder="0">
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="sect-people">
-        <div class="div-people">
-          <label for="billAmount" class="label">Number of People</label>
-          <input type="text" id="numOfPeople" class="user-input" placeholder="0">
-        </div>
-      </section>
+        <section class="sect-tip">
+          <div class="div-tip">
+            <p class="label">Select Tip %</p>
+            <div class="div-tip-button">
+              <button class="btn">5%</button>
+              <button class="btn">10%</button>
+              <button class="btn">15%</button>
+              <button class="btn">25%</button>
+              <button class="btn">50%</button>
+              <input type="text" id="customTip" class="custom-tip" placeholder="Custom">
+            </div>
+          </div>
+        </section>
+        
+        <section class="sect-people">
+          <div class="div-people">
+            <label for="billAmount" class="label">Number of People</label>
+            <input type="text" id="numOfPeople" class="user-input" placeholder="0">
+          </div>
+        </section>
+      </div>
 
       <section class="sect-amount">
         <div class="div-amount">
@@ -69,7 +70,6 @@
         </div>
       </section>
     </main>
-
   </div>
   <script src="script.js"></script>
 </body>
