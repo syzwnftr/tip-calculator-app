@@ -171,3 +171,32 @@ main {
     background-color: hsla(172, 67%, 45%, 30%);
     color: var(--very-dark-cyan);
 }
+
+@media(min-width: 1000px) {
+    body {
+        min-height: 100vh;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .div-for-desktop {
+        flex-basis: 50%;
+    }
+
+    .sect-amount {
+        flex-basis: 50%;
+    }
+
+    .div-tip-button {
+        grid-template-columns: repeat(3, minmax(0, 120px));
+    }
+
+    .user-input {
+        width: 392px; 
+        outline: 1px solid red;
+    }
+}
+
