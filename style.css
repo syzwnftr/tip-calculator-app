@@ -196,7 +196,33 @@ main {
 
     .user-input {
         width: 392px; 
-        outline: 1px solid red;
     }
 }
 
+@media(min-width: 1100px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-div {
+        margin-top: 0;
+    }
+
+    main {
+        width: 900px;
+        margin: auto;
+        padding: 1.7rem;
+        padding-left: 2.2rem;
+        border-radius: 2rem;
+    }
+
+    .div-tip-button {
+        grid-template-columns: repeat(3, minmax(0, 110px));
+    }
+
+    .user-input {
+        width: 362px; 
+    }
+}
