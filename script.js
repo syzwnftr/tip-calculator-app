@@ -3,19 +3,21 @@ const inputTip = document.querySelector('#customTip');
 const inputNumPeople = document.querySelector('#numOfPeople');
 const btnReset = document.querySelector('#btnReset');
 
+console.log(inputBill.value)
+
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
     var num = /[^0-9\.]/g;
-    input.value = input.value.replace(num, '');
+    input.value = input.value.replace(num, ''); // won't accept any input that aren't numbers and dot
     if(input.value.split('.').length > 2) { // convert string into an array and check if array length is more than 2 
-        input.value =input.value.replace(/\.+$/,"");
+        input.value =input.value.replace(/\.+$/,""); // only accept one dot
     }
 }
 
 // make an input only receives numbers
 function numbersOnly(input) {
     var num = /[^0-9]/g;
-    input.value = input.value.replace(num, '');
+    input.value = input.value.replace(num, ''); // won't accept any input that aren't numbers
 }
 
 // change btnReset bg-color when input is filled 
@@ -27,22 +29,25 @@ function bgColorChange() {
     }
 }
 
+// eventListener for inputBill, trigger when input is filled in input field
 inputBill.addEventListener('input', () => {
-    numbersDot(inputBill);
-    bgColorChange();
-    return parseFloat(inputBill.value);
+    numbersDot(inputBill); // use regex to check the input filled by user, only receive numbers and single dot (.)
+    bgColorChange(); // change btnReset bg-color when input is filled
+    return parseFloat(inputBill.value); //return the value filled by user in decimal 
 });
 
+// eventListener for inputTip, trigger when input is filled in input field
 inputTip.addEventListener('input', () => {
-    numbersDot(inputTip);
-    bgColorChange();
-    return parseFloat(inputTip.value);
+    numbersDot(inputTip); // use regex to check the input filled by user, only receive numbers and single dot (.)
+    bgColorChange(); // change btnReset bg-color when input is filled
+    return parseFloat(inputTip.value); //return the value filled by user in decimal 
 });
 
+// eventListener for inputNumPeople, trigger when input is filled in input field
 inputNumPeople.addEventListener('input', () => {
-    numbersOnly(inputNumPeople);
-    bgColorChange();
-    return parseInt(inputNumPeople.value);
+    numbersOnly(inputNumPeople); // use regex to check the input filled by user, only receive numbers
+    bgColorChange(); // change btnReset bg-color when input is filled
+    return parseInt(inputNumPeople.value); //return the value filled by user in integer 
 });
 
 // reset input when page is refresh
@@ -53,5 +58,5 @@ function resetInput() {
 }
 
 
-resetInput();
+resetInput(); // run the function everytime page is reloaded
     
