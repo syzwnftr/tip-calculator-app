@@ -159,7 +159,7 @@ main {
     font-size: 2.2rem;
 }
 
-.sect-amount #btnReset {
+#btnReset {
     padding: 1rem;
     width: 100%;
     text-transform: uppercase;
@@ -170,16 +170,15 @@ main {
     border-radius: 0.4rem;
     background-color: hsla(172, 67%, 45%, 30%);
     font-weight: 700;
-    background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
     transition: background-color 0.2s ease-in-out;
 }
 
-.sect-amount #btnReset:hover {
+#btnReset:hover {
     background-color: var(--light-grayish-cyan);
 }
 
-#btnReset .got-input {
+#btnReset.got-input {
     background-color: var(--strong-cyan);
 }
 
