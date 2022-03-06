@@ -3,7 +3,6 @@ const inputTip = document.querySelector('#customTip');
 const inputNumPeople = document.querySelector('#numOfPeople');
 const btnReset = document.querySelector('#btnReset');
 
-console.log(inputBill.value)
 
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
