@@ -142,6 +142,11 @@ main {
 .not-zero {
     font-weight: 700;
     color: rgba(204, 40, 40, 0.644); 
+    display: none;
+}
+
+.not-zero.show {
+    display: block;
 }
 
 .sect-amount {
@@ -224,7 +229,6 @@ main {
         justify-content: space-between;
         align-items: center;
         width: 392px;
-        margin-bottom: 0.5rem;
     }
 
     .sect-amount {
