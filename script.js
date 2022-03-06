@@ -45,6 +45,13 @@ inputTip.addEventListener('input', () => {
 // eventListener for inputNumPeople, trigger when input is filled in input field
 inputNumPeople.addEventListener('input', () => {
     numbersOnly(inputNumPeople); // use regex to check the input filled by user, only receive numbers
+   
+    if(inputNumPeople.value === '0') {
+        document.querySelector('.not-zero').classList.add('show');
+    } else {
+        document.querySelector('.not-zero').classList.remove('show');
+    }
+     
     bgColorChange(); // change btnReset bg-color when input is filled
     return parseInt(inputNumPeople.value); //return the value filled by user in integer 
 });
