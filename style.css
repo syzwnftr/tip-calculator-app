@@ -128,6 +128,21 @@ main {
     background-position: 1rem center;
 }
 
+.div-people-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.label-people {
+    margin-bottom: 0;
+}
+
+.not-zero {
+    font-weight: 700;
+    color: rgba(204, 40, 40, 0.644); 
+}
 
 .sect-amount {
     background-color: var(--very-dark-cyan);
@@ -202,6 +217,14 @@ main {
 
     .user-input {
         width: 392px; 
+    }
+
+    .div-people-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 392px;
+        margin-bottom: 0.5rem;
     }
 
     .sect-amount {
