@@ -17,6 +17,10 @@ function numbersDot(input) {
 function numbersOnly(input) {
     var num = /[^0-9]/g;
     input.value = input.value.replace(num, ''); // won't accept any input that aren't numbers
+
+    if(input.value.split('').length > 1 && input.value[0] === '0') {
+        input.value = input.value.replace(/\d+$/,"");
+    }
 }
 
 // change btnReset bg-color when input is filled 
@@ -45,13 +49,15 @@ inputTip.addEventListener('input', () => {
 // eventListener for inputNumPeople, trigger when input is filled in input field
 inputNumPeople.addEventListener('input', () => {
     numbersOnly(inputNumPeople); // use regex to check the input filled by user, only receive numbers
-   
+    // CONTINUE HERE!
     if(inputNumPeople.value === '0') {
         document.querySelector('.not-zero').classList.add('show');
+        inputNumPeople.classList.add('red-outline')
     } else {
         document.querySelector('.not-zero').classList.remove('show');
+        inputNumPeople.classList.remove('red-outline')
     }
-     
+
     bgColorChange(); // change btnReset bg-color when input is filled
     return parseInt(inputNumPeople.value); //return the value filled by user in integer 
 });
