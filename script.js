@@ -19,7 +19,7 @@ function numbersOnly(input) {
     input.value = input.value.replace(num, ''); // won't accept any input that aren't numbers
 
     if(input.value.split('').length > 1 && input.value[0] === '0') {
-        input.value = input.value.replace(/\d+$/,"0");
+        input.value = input.value.replace(/\d+$/,"0");  // only accept 0 if 0 is the first number been filled in
     }
 }
 
