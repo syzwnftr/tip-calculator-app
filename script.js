@@ -62,13 +62,18 @@ inputNumPeople.addEventListener('input', () => {
     return parseInt(inputNumPeople.value); //return the value filled by user in integer 
 });
 
+// reset input when btnReset is clicked
+btnReset.addEventListener('click', () => {
+    resetInput();
+    bgColorChange();
+});
+
 // reset input when page is refresh
 function resetInput() {
     inputBill.value = '';
     inputTip.value = '';
     inputNumPeople.value = '';
 }
-
 
 resetInput(); // run the function everytime page is reloaded
     
