@@ -3,6 +3,14 @@ const inputTip = document.querySelector('#customTip');
 const inputNumPeople = document.querySelector('#numOfPeople');
 const btnReset = document.querySelector('#btnReset');
 
+let totalAmount, tipPercent, numberOfPeople;
+
+const btnFive = document.getElementById('btn5');
+const btnTen = document.getElementById('btn10');
+const btnFifteen = document.getElementById('btn15');
+const btnTwentyFive = document.getElementById('btn25');
+const btnFifty = document.getElementById('btn50');
+
 
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
@@ -32,14 +40,21 @@ function bgColorChange() {
     }
 }
 
-let totalAmount, numberOfPeople, tipPerPerson;
+function howManyPercent(btn) {
+    tipPercent = parseInt(btn.value)
+    console.log(tipPercent);
+}
 
 function calcTotal(total, numberOfPeople) {
-    let amountPerPerson = total / numberOfPeople;
+    let tipAmountTotal = total * (tipPercent / 100)
+    let amountPerPerson = (total + tipAmountTotal) / numberOfPeople;
+    let tipPerPerson = tipAmountTotal / numberOfPeople;
     
     if(totalAmount === undefined || numberOfPeople === undefined || isNaN(amountPerPerson)) {
+        document.getElementById('tipAmount').textContent ='$0.00';
         document.getElementById('totalAmount').textContent ='$0.00';
     } else {
+        document.getElementById('tipAmount').textContent =`$${tipPerPerson.toFixed(2)}`;
         document.getElementById('totalAmount').textContent =`$${amountPerPerson.toFixed(2)}`;
     }
 }
@@ -80,6 +95,31 @@ inputNumPeople.addEventListener('input', () => {
     // return parseInt(inputNumPeople.value); //return the value filled by user in integer 
 });
 
+btnFive.addEventListener('click', () => {
+    howManyPercent(btnFive);
+    calcTotal(totalAmount, numberOfPeople);
+});
+
+btnTen.addEventListener('click', () => {
+    howManyPercent(btnTen);
+    calcTotal(totalAmount, numberOfPeople);
+});
+
+btnFifteen.addEventListener('click', () => {
+    howManyPercent(btnFifteen);
+    calcTotal(totalAmount, numberOfPeople);
+});
+
+btnTwentyFive.addEventListener('click', () => {
+    howManyPercent(btnTwentyFive);
+    calcTotal(totalAmount, numberOfPeople);
+});
+
+btnFifty.addEventListener('click', () => {
+    howManyPercent(btnFifty);
+    calcTotal(totalAmount, numberOfPeople);
+});
+
 // reset input when btnReset is clicked
 btnReset.addEventListener('click', () => {
     resetInput();
@@ -91,6 +131,8 @@ function resetInput() {
     inputBill.value = '';
     inputTip.value = '';
     inputNumPeople.value = '';
+    document.getElementById('tipAmount').textContent ='$0.00';
+    document.getElementById('totalAmount').textContent ='$0.00';
 }
 
 resetInput(); // run the function everytime page is reloaded
