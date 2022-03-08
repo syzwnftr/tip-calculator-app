@@ -32,11 +32,26 @@ function bgColorChange() {
     }
 }
 
+let totalAmount, numberOfPeople, tipPerPerson;
+
+function calcTotal(total, numberOfPeople) {
+    let amountPerPerson = total / numberOfPeople;
+    
+    if(totalAmount === undefined || numberOfPeople === undefined || isNaN(amountPerPerson)) {
+        document.getElementById('totalAmount').textContent ='$0.00';
+    } else {
+        document.getElementById('totalAmount').textContent =`$${amountPerPerson.toFixed(2)}`;
+    }
+}
+
 // eventListener for inputBill, trigger when input is filled in input field
 inputBill.addEventListener('input', () => {
     numbersDot(inputBill); // use regex to check the input filled by user, only receive numbers and single dot (.)
     bgColorChange(); // change btnReset bg-color when input is filled
-    return parseFloat(inputBill.value); //return the value filled by user in decimal 
+    totalAmount = parseFloat(inputBill.value);
+
+    calcTotal(totalAmount, numberOfPeople);
+    // return parseFloat(inputBill.value); //return the value filled by user in decimal 
 });
 
 // eventListener for inputTip, trigger when input is filled in input field
@@ -49,7 +64,7 @@ inputTip.addEventListener('input', () => {
 // eventListener for inputNumPeople, trigger when input is filled in input field
 inputNumPeople.addEventListener('input', () => {
     numbersOnly(inputNumPeople); // use regex to check the input filled by user, only receive numbers
-    // CONTINUE HERE!
+
     if(inputNumPeople.value === '0') {
         document.querySelector('.not-zero').classList.add('show');
         inputNumPeople.classList.add('red-outline')
@@ -59,7 +74,10 @@ inputNumPeople.addEventListener('input', () => {
     }
 
     bgColorChange(); // change btnReset bg-color when input is filled
-    return parseInt(inputNumPeople.value); //return the value filled by user in integer 
+    numberOfPeople = parseInt(inputNumPeople.value)
+    calcTotal(totalAmount, numberOfPeople);
+
+    // return parseInt(inputNumPeople.value); //return the value filled by user in integer 
 });
 
 // reset input when btnReset is clicked
