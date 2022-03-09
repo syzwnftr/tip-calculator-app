@@ -98,26 +98,58 @@ inputNumPeople.addEventListener('input', () => {
 btnFive.addEventListener('click', () => {
     howManyPercent(btnFive);
     calcTotal(totalAmount, numberOfPeople);
+
+    btnFive.classList.add('focus');
+    btnTen.classList.remove('focus');
+    btnFifteen.classList.remove('focus');
+    btnTwentyFive.classList.remove('focus');
+    btnFifty.classList.remove('focus');
+
 });
 
 btnTen.addEventListener('click', () => {
     howManyPercent(btnTen);
     calcTotal(totalAmount, numberOfPeople);
+   
+    btnTen.classList.add('focus');
+    btnFive.classList.remove('focus');
+    btnFifteen.classList.remove('focus');
+    btnTwentyFive.classList.remove('focus');
+    btnFifty.classList.remove('focus');
+   
 });
 
 btnFifteen.addEventListener('click', () => {
     howManyPercent(btnFifteen);
     calcTotal(totalAmount, numberOfPeople);
+
+    btnFifteen.classList.add('focus');
+    btnFive.classList.remove('focus');
+    btnTen.classList.remove('focus');
+    btnTwentyFive.classList.remove('focus');
+    btnFifty.classList.remove('focus');
 });
 
 btnTwentyFive.addEventListener('click', () => {
     howManyPercent(btnTwentyFive);
     calcTotal(totalAmount, numberOfPeople);
+
+    btnTwentyFive.classList.add('focus');
+    btnFive.classList.remove('focus');
+    btnTen.classList.remove('focus');
+    btnFifteen.classList.remove('focus');
+    btnFifty.classList.remove('focus');
 });
 
 btnFifty.addEventListener('click', () => {
     howManyPercent(btnFifty);
     calcTotal(totalAmount, numberOfPeople);
+
+    btnFifty.classList.add('focus');
+    btnFive.classList.remove('focus');
+    btnTen.classList.remove('focus');
+    btnFifteen.classList.remove('focus');
+    btnTwentyFive.classList.remove('focus');
 });
 
 // reset input when btnReset is clicked
@@ -133,6 +165,12 @@ function resetInput() {
     inputNumPeople.value = '';
     document.getElementById('tipAmount').textContent ='$0.00';
     document.getElementById('totalAmount').textContent ='$0.00';
+
+    btnFive.classList.remove('focus');
+    btnTen.classList.remove('focus');
+    btnFifteen.classList.remove('focus');
+    btnTwentyFive.classList.remove('focus');
+    btnFifty.classList.remove('focus');
 }
 
 resetInput(); // run the function everytime page is reloaded
