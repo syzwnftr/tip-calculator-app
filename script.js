@@ -163,6 +163,10 @@ function resetInput() {
     inputBill.value = '';
     inputTip.value = '';
     inputNumPeople.value = '';
+    
+    tipPercent = undefined;
+    numberOfPeople = undefined;
+
     document.getElementById('tipAmount').textContent ='$0.00';
     document.getElementById('totalAmount').textContent ='$0.00';
 
