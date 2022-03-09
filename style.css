@@ -98,6 +98,11 @@ main {
     color: var(--very-dark-cyan);
 }
 
+.btn.focus {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
 .btn:hover {
     background-color: var(--light-grayish-cyan);
     color: var(--very-dark-cyan);
