@@ -10,6 +10,9 @@ const btnTen = document.getElementById('btn10');
 const btnFifteen = document.getElementById('btn15');
 const btnTwentyFive = document.getElementById('btn25');
 const btnFifty = document.getElementById('btn50');
+const customTip = document.getElementById('customTip');
+
+
 
 
 // make an input only receives numbers and single dot(.) 
@@ -42,7 +45,6 @@ function bgColorChange() {
 
 function howManyPercent(btn) {
     tipPercent = parseInt(btn.value)
-    console.log(tipPercent);
 }
 
 function calcTotal(total, numberOfPeople) {
@@ -104,6 +106,7 @@ btnFive.addEventListener('click', () => {
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
+    customTip.classList.remove('customFocus');
 
 });
 
@@ -116,6 +119,7 @@ btnTen.addEventListener('click', () => {
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
+    customTip.classList.remove('customFocus');
    
 });
 
@@ -128,6 +132,7 @@ btnFifteen.addEventListener('click', () => {
     btnTen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
+    customTip.classList.remove('customFocus');
 });
 
 btnTwentyFive.addEventListener('click', () => {
@@ -139,6 +144,7 @@ btnTwentyFive.addEventListener('click', () => {
     btnTen.classList.remove('focus');
     btnFifteen.classList.remove('focus');
     btnFifty.classList.remove('focus');
+    customTip.classList.remove('customFocus');
 });
 
 btnFifty.addEventListener('click', () => {
@@ -150,7 +156,20 @@ btnFifty.addEventListener('click', () => {
     btnTen.classList.remove('focus');
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
+    customTip.classList.remove('customFocus');
 });
+
+customTip.addEventListener('input', () => {
+    howManyPercent(customTip);
+    calcTotal(totalAmount, numberOfPeople);
+
+    customTip.classList.add('customFocus');
+    btnFive.classList.remove('focus');
+    btnTen.classList.remove('focus');
+    btnFifteen.classList.remove('focus');
+    btnTwentyFive.classList.remove('focus');
+    btnFifty.classList.remove('focus');
+})
 
 // reset input when btnReset is clicked
 btnReset.addEventListener('click', () => {
