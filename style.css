@@ -127,6 +127,10 @@ main {
     outline: 2px solid var(--strong-cyan);
 }
 
+.custom-tip.customFocus {
+    outline: 2px solid var(--strong-cyan);
+}
+
 #numOfPeople {
     background-image: url('./images/icon-person.svg');
     background-repeat: no-repeat;
