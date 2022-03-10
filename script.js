@@ -10,7 +10,6 @@ const btnTen = document.getElementById('btn10');
 const btnFifteen = document.getElementById('btn15');
 const btnTwentyFive = document.getElementById('btn25');
 const btnFifty = document.getElementById('btn50');
-const customTip = document.getElementById('customTip');
 
 
 // make an input only receives numbers and single dot(.) 
@@ -101,7 +100,7 @@ btnFive.addEventListener('click', () => {
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
-    customTip.classList.remove('customFocus');
+    inputTip.classList.remove('customFocus');
 
 });
 
@@ -114,7 +113,7 @@ btnTen.addEventListener('click', () => {
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
-    customTip.classList.remove('customFocus');
+    inputTip.classList.remove('customFocus');
    
 });
 
@@ -127,7 +126,7 @@ btnFifteen.addEventListener('click', () => {
     btnTen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
-    customTip.classList.remove('customFocus');
+    inputTip.classList.remove('customFocus');
 });
 
 btnTwentyFive.addEventListener('click', () => {
@@ -139,7 +138,7 @@ btnTwentyFive.addEventListener('click', () => {
     btnTen.classList.remove('focus');
     btnFifteen.classList.remove('focus');
     btnFifty.classList.remove('focus');
-    customTip.classList.remove('customFocus');
+    inputTip.classList.remove('customFocus');
 });
 
 btnFifty.addEventListener('click', () => {
@@ -151,10 +150,10 @@ btnFifty.addEventListener('click', () => {
     btnTen.classList.remove('focus');
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
-    customTip.classList.remove('customFocus');
+    inputTip.classList.remove('customFocus');
 });
 
-customTip.addEventListener('input', () => {
+inputTip.addEventListener('input', () => {
     howManyPercent(customTip);
     calcTotal(totalAmount, numberOfPeople);
 
@@ -189,6 +188,7 @@ function resetInput() {
     btnFifteen.classList.remove('focus');
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
+    inputTip.classList.remove('customFocus');
 }
 
 resetInput(); // run the function everytime page is reloaded
