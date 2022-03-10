@@ -13,8 +13,6 @@ const btnFifty = document.getElementById('btn50');
 const customTip = document.getElementById('customTip');
 
 
-
-
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
     var num = /[^0-9\.]/g;
@@ -67,8 +65,7 @@ inputBill.addEventListener('input', () => {
     bgColorChange(); // change btnReset bg-color when input is filled
     totalAmount = parseFloat(inputBill.value);
 
-    calcTotal(totalAmount, numberOfPeople);
-    // return parseFloat(inputBill.value); //return the value filled by user in decimal 
+    calcTotal(totalAmount, numberOfPeople); 
 });
 
 // eventListener for inputTip, trigger when input is filled in input field
@@ -92,9 +89,7 @@ inputNumPeople.addEventListener('input', () => {
 
     bgColorChange(); // change btnReset bg-color when input is filled
     numberOfPeople = parseInt(inputNumPeople.value)
-    calcTotal(totalAmount, numberOfPeople);
-
-    // return parseInt(inputNumPeople.value); //return the value filled by user in integer 
+    calcTotal(totalAmount, numberOfPeople); 
 });
 
 btnFive.addEventListener('click', () => {
