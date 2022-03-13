@@ -154,10 +154,10 @@ btnFifty.addEventListener('click', () => {
 });
 
 inputTip.addEventListener('input', () => {
-    howManyPercent(customTip);
+    howManyPercent(inputTip);
     calcTotal(totalAmount, numberOfPeople);
 
-    customTip.classList.add('customFocus');
+    inputTip.classList.add('customFocus');
     btnFive.classList.remove('focus');
     btnTen.classList.remove('focus');
     btnFifteen.classList.remove('focus');
