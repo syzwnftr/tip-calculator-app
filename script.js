@@ -80,10 +80,10 @@ inputNumPeople.addEventListener('input', () => {
 
     if(inputNumPeople.value === '0') {
         document.querySelector('.not-zero').classList.add('show');
-        inputNumPeople.classList.add('red-outline')
+        inputNumPeople.classList.add('red-outline');
     } else {
         document.querySelector('.not-zero').classList.remove('show');
-        inputNumPeople.classList.remove('red-outline')
+        inputNumPeople.classList.remove('red-outline');
     }
 
     bgColorChange(); // change btnReset bg-color when input is filled
@@ -189,6 +189,10 @@ function resetInput() {
     btnTwentyFive.classList.remove('focus');
     btnFifty.classList.remove('focus');
     inputTip.classList.remove('customFocus');
+
+    // removes warning text and red outline 
+    document.querySelector('.not-zero').classList.remove('show');
+    inputNumPeople.classList.remove('red-outline');
 }
 
 resetInput(); // run the function everytime page is reloaded
