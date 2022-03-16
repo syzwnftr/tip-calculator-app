@@ -35,8 +35,10 @@ function numbersOnly(input) {
 function bgColorChange() {
     if(inputBill.value || inputTip.value || inputNumPeople.value) {
         btnReset.classList.add('got-input');
+        btnReset.disabled = false;
     } else {
         btnReset.classList.remove('got-input');
+        btnReset.disabled = true;
     }
 }
 
