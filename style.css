@@ -209,7 +209,6 @@ main {
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 1px;
-    cursor: pointer;
     border: none;
     border-radius: 0.4rem;
     background-color: hsla(172, 67%, 45%, 30%);
@@ -218,8 +217,9 @@ main {
     transition: background-color 0.2s ease-in-out;
 }
 
-#btnReset:hover {
+#btnReset:hover:enabled {
     background-color: var(--light-grayish-cyan);
+    cursor: pointer;
 }
 
 #btnReset.got-input {
