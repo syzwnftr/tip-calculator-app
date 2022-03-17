@@ -11,6 +11,7 @@ const btnFifteen = document.getElementById('btn15');
 const btnTwentyFive = document.getElementById('btn25');
 const btnFifty = document.getElementById('btn50');
 
+const btnTip = document.querySelectorAll('.btn');
 
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
@@ -93,67 +94,118 @@ inputNumPeople.addEventListener('input', () => {
     calcTotal(totalAmount, numberOfPeople); 
 });
 
-btnFive.addEventListener('click', () => {
-    howManyPercent(btnFive);
-    calcTotal(totalAmount, numberOfPeople);
+// btnFive.addEventListener('click', () => {
+//     howManyPercent(btnFive);
+//     calcTotal(totalAmount, numberOfPeople);
 
-    btnFive.classList.add('focus');
-    btnTen.classList.remove('focus');
-    btnFifteen.classList.remove('focus');
-    btnTwentyFive.classList.remove('focus');
-    btnFifty.classList.remove('focus');
-    inputTip.classList.remove('customFocus');
+//     btnFive.classList.add('focus');
+//     btnTen.classList.remove('focus');
+//     btnFifteen.classList.remove('focus');
+//     btnTwentyFive.classList.remove('focus');
+//     btnFifty.classList.remove('focus');
+//     inputTip.classList.remove('customFocus');
 
-});
+// });
 
-btnTen.addEventListener('click', () => {
-    howManyPercent(btnTen);
-    calcTotal(totalAmount, numberOfPeople);
+// btnTen.addEventListener('click', () => {
+//     howManyPercent(btnTen);
+//     calcTotal(totalAmount, numberOfPeople);
    
-    btnTen.classList.add('focus');
-    btnFive.classList.remove('focus');
-    btnFifteen.classList.remove('focus');
-    btnTwentyFive.classList.remove('focus');
-    btnFifty.classList.remove('focus');
-    inputTip.classList.remove('customFocus');
+//     btnTen.classList.add('focus');
+//     btnFive.classList.remove('focus');
+//     btnFifteen.classList.remove('focus');
+//     btnTwentyFive.classList.remove('focus');
+//     btnFifty.classList.remove('focus');
+//     inputTip.classList.remove('customFocus');
    
-});
+// });
 
-btnFifteen.addEventListener('click', () => {
-    howManyPercent(btnFifteen);
-    calcTotal(totalAmount, numberOfPeople);
+// btnFifteen.addEventListener('click', () => {
+//     howManyPercent(btnFifteen);
+//     calcTotal(totalAmount, numberOfPeople);
 
-    btnFifteen.classList.add('focus');
-    btnFive.classList.remove('focus');
-    btnTen.classList.remove('focus');
-    btnTwentyFive.classList.remove('focus');
-    btnFifty.classList.remove('focus');
-    inputTip.classList.remove('customFocus');
-});
+//     btnFifteen.classList.add('focus');
+//     btnFive.classList.remove('focus');
+//     btnTen.classList.remove('focus');
+//     btnTwentyFive.classList.remove('focus');
+//     btnFifty.classList.remove('focus');
+//     inputTip.classList.remove('customFocus');
+// });
 
-btnTwentyFive.addEventListener('click', () => {
-    howManyPercent(btnTwentyFive);
-    calcTotal(totalAmount, numberOfPeople);
+// btnTwentyFive.addEventListener('click', () => {
+//     howManyPercent(btnTwentyFive);
+//     calcTotal(totalAmount, numberOfPeople);
 
-    btnTwentyFive.classList.add('focus');
-    btnFive.classList.remove('focus');
-    btnTen.classList.remove('focus');
-    btnFifteen.classList.remove('focus');
-    btnFifty.classList.remove('focus');
-    inputTip.classList.remove('customFocus');
-});
+//     btnTwentyFive.classList.add('focus');
+//     btnFive.classList.remove('focus');
+//     btnTen.classList.remove('focus');
+//     btnFifteen.classList.remove('focus');
+//     btnFifty.classList.remove('focus');
+//     inputTip.classList.remove('customFocus');
+// });
 
-btnFifty.addEventListener('click', () => {
-    howManyPercent(btnFifty);
-    calcTotal(totalAmount, numberOfPeople);
+// btnFifty.addEventListener('click', () => {
+//     howManyPercent(btnFifty);
+//     calcTotal(totalAmount, numberOfPeople);
 
-    btnFifty.classList.add('focus');
-    btnFive.classList.remove('focus');
-    btnTen.classList.remove('focus');
-    btnFifteen.classList.remove('focus');
-    btnTwentyFive.classList.remove('focus');
-    inputTip.classList.remove('customFocus');
-});
+//     btnFifty.classList.add('focus');
+//     btnFive.classList.remove('focus');
+//     btnTen.classList.remove('focus');
+//     btnFifteen.classList.remove('focus');
+//     btnTwentyFive.classList.remove('focus');
+//     inputTip.classList.remove('customFocus');
+// });
+
+for(let i = 0; i < btnTip.length; i++) {
+    btnTip[i].addEventListener('click', () => {
+        howManyPercent(btnTip[i]);
+        calcTotal(totalAmount, numberOfPeople);
+    
+        btnTip[i].classList.add('focus');
+
+        if(i === 0) {
+            btnTen.classList.remove('focus');
+            btnFifteen.classList.remove('focus');
+            btnTwentyFive.classList.remove('focus');
+            btnFifty.classList.remove('focus');
+            inputTip.classList.remove('customFocus');
+        }
+
+        if(i === 1) {
+            btnFive.classList.remove('focus');
+            btnFifteen.classList.remove('focus');
+            btnTwentyFive.classList.remove('focus');
+            btnFifty.classList.remove('focus');
+            inputTip.classList.remove('customFocus');
+        }
+
+        if(i === 2) {
+            btnTen.classList.remove('focus');
+            btnFive.classList.remove('focus');
+            btnTwentyFive.classList.remove('focus');
+            btnFifty.classList.remove('focus');
+            inputTip.classList.remove('customFocus');
+        }
+
+        if(i === 3) {
+            btnTen.classList.remove('focus');
+            btnFifteen.classList.remove('focus');
+            btnFive.classList.remove('focus');
+            btnFifty.classList.remove('focus');
+            inputTip.classList.remove('customFocus');
+        }
+
+        if(i === 4) {
+            btnTen.classList.remove('focus');
+            btnFifteen.classList.remove('focus');
+            btnTwentyFive.classList.remove('focus');
+            btnFive.classList.remove('focus');
+            inputTip.classList.remove('customFocus');
+        }
+       
+    });
+    
+}
 
 inputTip.addEventListener('input', () => {
     howManyPercent(inputTip);
