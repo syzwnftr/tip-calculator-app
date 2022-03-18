@@ -89,6 +89,7 @@ for(let i = 0; i < btnsTip.length; i++) {
         calcTotal(totalAmount, numberOfPeople);
         
         btnsTip.forEach(btn => btn.classList.remove('focus')); // removes .focus class from all btnsTip
+        inputTip.value = '';
         inputTip.classList.remove('customFocus');
         btnsTip[i].classList.add('focus');  // add .focus class to current btnsTip
     });   
