@@ -158,56 +158,12 @@ inputNumPeople.addEventListener('input', () => {
 
 for(let i = 0; i < btnTip.length; i++) {
     btnTip[i].addEventListener('click', () => {
-        let n = 0;
         howManyPercent(btnTip[i]);
         calcTotal(totalAmount, numberOfPeople);
-    
-        while(n < btnTip.length) {
-            btnTip[n++].classList.remove('focus');
-        }
-
-        btnTip[i].classList.add('focus');
-
-        // if(i === 0) {
-        //     btnTen.classList.remove('focus');
-        //     btnFifteen.classList.remove('focus');
-        //     btnTwentyFive.classList.remove('focus');
-        //     btnFifty.classList.remove('focus');
-        //     inputTip.classList.remove('customFocus');
-        // }
-
-        // if(i === 1) {
-        //     btnFive.classList.remove('focus');
-        //     btnFifteen.classList.remove('focus');
-        //     btnTwentyFive.classList.remove('focus');
-        //     btnFifty.classList.remove('focus');
-        //     inputTip.classList.remove('customFocus');
-        // }
-
-        // if(i === 2) {
-        //     btnTen.classList.remove('focus');
-        //     btnFive.classList.remove('focus');
-        //     btnTwentyFive.classList.remove('focus');
-        //     btnFifty.classList.remove('focus');
-        //     inputTip.classList.remove('customFocus');
-        // }
-
-        // if(i === 3) {
-        //     btnTen.classList.remove('focus');
-        //     btnFifteen.classList.remove('focus');
-        //     btnFive.classList.remove('focus');
-        //     btnFifty.classList.remove('focus');
-        //     inputTip.classList.remove('customFocus');
-        // }
-
-        // if(i === 4) {
-        //     btnTen.classList.remove('focus');
-        //     btnFifteen.classList.remove('focus');
-        //     btnTwentyFive.classList.remove('focus');
-        //     btnFive.classList.remove('focus');
-        //     inputTip.classList.remove('customFocus');
-        // }
-       
+        
+        btnTip.forEach(btn => btn.classList.remove('focus'));
+        inputTip.classList.remove('customFocus');
+        btnTip[i].classList.add('focus');  
     });
     
 }
@@ -242,12 +198,14 @@ function resetInput() {
     document.getElementById('tipAmount').textContent ='$0.00';
     document.getElementById('totalAmount').textContent ='$0.00';
 
-    btnFive.classList.remove('focus');
-    btnTen.classList.remove('focus');
-    btnFifteen.classList.remove('focus');
-    btnTwentyFive.classList.remove('focus');
-    btnFifty.classList.remove('focus');
-    inputTip.classList.remove('customFocus');
+    // btnFive.classList.remove('focus');
+    // btnTen.classList.remove('focus');
+    // btnFifteen.classList.remove('focus');
+    // btnTwentyFive.classList.remove('focus');
+    // btnFifty.classList.remove('focus');
+    // inputTip.classList.remove('customFocus');
+
+    btnTip.forEach(btn => btn.classList.remove('focus'));
 
     // removes warning text and red outline 
     document.querySelector('.not-zero').classList.remove('show');
