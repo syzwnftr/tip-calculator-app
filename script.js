@@ -11,7 +11,7 @@ const btnFifteen = document.getElementById('btn15');
 const btnTwentyFive = document.getElementById('btn25');
 const btnFifty = document.getElementById('btn50');
 
-const btnTip = document.querySelectorAll('.btn');
+const btnsTip = document.querySelectorAll('.btn');
 
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
@@ -156,14 +156,14 @@ inputNumPeople.addEventListener('input', () => {
 //     inputTip.classList.remove('customFocus');
 // });
 
-for(let i = 0; i < btnTip.length; i++) {
-    btnTip[i].addEventListener('click', () => {
-        howManyPercent(btnTip[i]);
+for(let i = 0; i < btnsTip.length; i++) {
+    btnsTip[i].addEventListener('click', () => {
+        howManyPercent(btnsTip[i]);
         calcTotal(totalAmount, numberOfPeople);
         
-        btnTip.forEach(btn => btn.classList.remove('focus'));
+        btnsTip.forEach(btn => btn.classList.remove('focus'));
         inputTip.classList.remove('customFocus');
-        btnTip[i].classList.add('focus');  
+        btnsTip[i].classList.add('focus');  
     });
     
 }
@@ -172,12 +172,13 @@ inputTip.addEventListener('input', () => {
     howManyPercent(inputTip);
     calcTotal(totalAmount, numberOfPeople);
 
+    btnsTip.forEach(btn => btn.classList.remove('focus'));
     inputTip.classList.add('customFocus');
-    btnFive.classList.remove('focus');
-    btnTen.classList.remove('focus');
-    btnFifteen.classList.remove('focus');
-    btnTwentyFive.classList.remove('focus');
-    btnFifty.classList.remove('focus');
+    // btnFive.classList.remove('focus');
+    // btnTen.classList.remove('focus');
+    // btnFifteen.classList.remove('focus');
+    // btnTwentyFive.classList.remove('focus');
+    // btnFifty.classList.remove('focus');
 })
 
 // reset input when btnReset is clicked
@@ -203,9 +204,9 @@ function resetInput() {
     // btnFifteen.classList.remove('focus');
     // btnTwentyFive.classList.remove('focus');
     // btnFifty.classList.remove('focus');
-    // inputTip.classList.remove('customFocus');
-
-    btnTip.forEach(btn => btn.classList.remove('focus'));
+    
+    btnsTip.forEach(btn => btn.classList.remove('focus'));
+    inputTip.classList.remove('customFocus');
 
     // removes warning text and red outline 
     document.querySelector('.not-zero').classList.remove('show');
