@@ -3,15 +3,9 @@ const inputTip = document.querySelector('#customTip');
 const inputNumPeople = document.querySelector('#numOfPeople');
 const btnReset = document.querySelector('#btnReset');
 
-let totalAmount, tipPercent, numberOfPeople;
-
-const btnFive = document.getElementById('btn5');
-const btnTen = document.getElementById('btn10');
-const btnFifteen = document.getElementById('btn15');
-const btnTwentyFive = document.getElementById('btn25');
-const btnFifty = document.getElementById('btn50');
-
 const btnsTip = document.querySelectorAll('.btn');
+
+let totalAmount, tipPercent, numberOfPeople;
 
 // make an input only receives numbers and single dot(.) 
 function numbersDot(input) {
@@ -43,10 +37,12 @@ function bgColorChange() {
     }
 }
 
+// converting string to number
 function howManyPercent(btn) {
     tipPercent = parseInt(btn.value)
 }
 
+// calculate tip amount per person and total to be paid per person
 function calcTotal(total, numberOfPeople) {
     let tipAmountTotal = total * (tipPercent / 100)
     let amountPerPerson = (total + tipAmountTotal) / numberOfPeople;
@@ -94,76 +90,14 @@ inputNumPeople.addEventListener('input', () => {
     calcTotal(totalAmount, numberOfPeople); 
 });
 
-// btnFive.addEventListener('click', () => {
-//     howManyPercent(btnFive);
-//     calcTotal(totalAmount, numberOfPeople);
-
-//     btnFive.classList.add('focus');
-//     btnTen.classList.remove('focus');
-//     btnFifteen.classList.remove('focus');
-//     btnTwentyFive.classList.remove('focus');
-//     btnFifty.classList.remove('focus');
-//     inputTip.classList.remove('customFocus');
-
-// });
-
-// btnTen.addEventListener('click', () => {
-//     howManyPercent(btnTen);
-//     calcTotal(totalAmount, numberOfPeople);
-   
-//     btnTen.classList.add('focus');
-//     btnFive.classList.remove('focus');
-//     btnFifteen.classList.remove('focus');
-//     btnTwentyFive.classList.remove('focus');
-//     btnFifty.classList.remove('focus');
-//     inputTip.classList.remove('customFocus');
-   
-// });
-
-// btnFifteen.addEventListener('click', () => {
-//     howManyPercent(btnFifteen);
-//     calcTotal(totalAmount, numberOfPeople);
-
-//     btnFifteen.classList.add('focus');
-//     btnFive.classList.remove('focus');
-//     btnTen.classList.remove('focus');
-//     btnTwentyFive.classList.remove('focus');
-//     btnFifty.classList.remove('focus');
-//     inputTip.classList.remove('customFocus');
-// });
-
-// btnTwentyFive.addEventListener('click', () => {
-//     howManyPercent(btnTwentyFive);
-//     calcTotal(totalAmount, numberOfPeople);
-
-//     btnTwentyFive.classList.add('focus');
-//     btnFive.classList.remove('focus');
-//     btnTen.classList.remove('focus');
-//     btnFifteen.classList.remove('focus');
-//     btnFifty.classList.remove('focus');
-//     inputTip.classList.remove('customFocus');
-// });
-
-// btnFifty.addEventListener('click', () => {
-//     howManyPercent(btnFifty);
-//     calcTotal(totalAmount, numberOfPeople);
-
-//     btnFifty.classList.add('focus');
-//     btnFive.classList.remove('focus');
-//     btnTen.classList.remove('focus');
-//     btnFifteen.classList.remove('focus');
-//     btnTwentyFive.classList.remove('focus');
-//     inputTip.classList.remove('customFocus');
-// });
-
 for(let i = 0; i < btnsTip.length; i++) {
     btnsTip[i].addEventListener('click', () => {
         howManyPercent(btnsTip[i]);
         calcTotal(totalAmount, numberOfPeople);
         
-        btnsTip.forEach(btn => btn.classList.remove('focus'));
+        btnsTip.forEach(btn => btn.classList.remove('focus')); // removes .focus class from all btnsTip
         inputTip.classList.remove('customFocus');
-        btnsTip[i].classList.add('focus');  
+        btnsTip[i].classList.add('focus');  // add .focus class to current btnsTip
     });
     
 }
@@ -174,11 +108,6 @@ inputTip.addEventListener('input', () => {
 
     btnsTip.forEach(btn => btn.classList.remove('focus'));
     inputTip.classList.add('customFocus');
-    // btnFive.classList.remove('focus');
-    // btnTen.classList.remove('focus');
-    // btnFifteen.classList.remove('focus');
-    // btnTwentyFive.classList.remove('focus');
-    // btnFifty.classList.remove('focus');
 })
 
 // reset input when btnReset is clicked
@@ -198,14 +127,8 @@ function resetInput() {
 
     document.getElementById('tipAmount').textContent ='$0.00';
     document.getElementById('totalAmount').textContent ='$0.00';
-
-    // btnFive.classList.remove('focus');
-    // btnTen.classList.remove('focus');
-    // btnFifteen.classList.remove('focus');
-    // btnTwentyFive.classList.remove('focus');
-    // btnFifty.classList.remove('focus');
     
-    btnsTip.forEach(btn => btn.classList.remove('focus'));
+    btnsTip.forEach(btn => btn.classList.remove('focus')); // removes .focus class from all btnsTip
     inputTip.classList.remove('customFocus');
 
     // removes warning text and red outline 
