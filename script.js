@@ -66,13 +66,6 @@ inputBill.addEventListener('input', () => {
     calcTotal(totalAmount, numberOfPeople); 
 });
 
-// eventListener for inputTip, trigger when input is filled in input field
-inputTip.addEventListener('input', () => {
-    numbersDot(inputTip); // use regex to check the input filled by user, only receive numbers and single dot (.)
-    bgColorChange(); // change btnReset bg-color when input is filled
-    return parseFloat(inputTip.value); //return the value filled by user in decimal 
-});
-
 // eventListener for inputNumPeople, trigger when input is filled in input field
 inputNumPeople.addEventListener('input', () => {
     numbersOnly(inputNumPeople); // use regex to check the input filled by user, only receive numbers
@@ -98,17 +91,19 @@ for(let i = 0; i < btnsTip.length; i++) {
         btnsTip.forEach(btn => btn.classList.remove('focus')); // removes .focus class from all btnsTip
         inputTip.classList.remove('customFocus');
         btnsTip[i].classList.add('focus');  // add .focus class to current btnsTip
-    });
-    
+    });   
 }
 
+// eventListener for inputTip, trigger when input is filled in input field
 inputTip.addEventListener('input', () => {
+    numbersDot(inputTip); // use regex to check the input filled by user, only receive numbers and single dot (.)
+    bgColorChange(); // change btnReset bg-color when input is filled
     howManyPercent(inputTip);
     calcTotal(totalAmount, numberOfPeople);
 
     btnsTip.forEach(btn => btn.classList.remove('focus'));
     inputTip.classList.add('customFocus');
-})
+});
 
 // reset input when btnReset is clicked
 btnReset.addEventListener('click', () => {
